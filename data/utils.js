@@ -6,3 +6,8 @@ export function findById(id, items) {
         }
     }
 }
+
+// export function calcOrderTotal(cartItem, cars)
+//     for(let cartItems of cartItem){
+//         if 
+// )

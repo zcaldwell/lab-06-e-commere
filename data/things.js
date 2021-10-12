@@ -8,7 +8,7 @@ export const cars = [
         Mileage: '230,352',
         Condition: 'Fair',
         img: './assets/saturn.jpg',
-        price: '1,200$'
+        price: 1200
     },
     {
         id: '2',
@@ -19,7 +19,7 @@ export const cars = [
         Mileage: '172,303',
         Condition: 'Good',
         img: './assets/Aztek.jpg',
-        price: '800$'
+        price: 800
     },
     {
         id: '3',
@@ -30,7 +30,7 @@ export const cars = [
         Mileage: '50,503',
         Condition: 'Great',
         img: './assets/ptcruiser.jpg',
-        price: '3,000$'
+        price: 3000
     },
     {
         id: '4',
@@ -41,7 +41,7 @@ export const cars = [
         Mileage: '90,353',
         Condition: 'Bad',
         img: './assets/ssr.jpg',
-        price: '2,000$'
+        price: 2000
     },
     {
         id: '5',
@@ -52,7 +52,7 @@ export const cars = [
         Mileage: '30,234',
         Condition: 'Great',
         img: './assets/prowler.jpg',
-        price: '999$'
+        price: 999
     }];
 
            
