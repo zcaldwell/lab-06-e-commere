@@ -18,7 +18,7 @@ export const cars = [
         Color: 'Burnt Orange',
         Mileage: '172,303',
         Condition: 'Good',
-        img: './assets/aztek.jpg',
+        img: './assets/Aztek.jpg',
         price: '800$'
     },
     {
