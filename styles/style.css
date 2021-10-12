@@ -1,15 +1,59 @@
 * {
     font-family: rye;
-    
-
 }
 
 body {
+    text-align: center;
+    background-color: red;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 100px;
+    
+}
+
+h2  {
+    font-weight: bold;
+    font-size: xx-large;
+    margin-bottom: 0;
+}
+
+h3 {
+    margin-top: 0;
+
+}
+
+#car-list {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.car-listing {
+    border: 3px solid black;
+    background-color: yellow;
+    border-radius: 10px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 10px;
 }
 
 .car-listing img {
-    width: 20%;
-    height: 20%;
-    display: flex;
+    width: 100%;
+    height: 100%;
+    border: 5px, solid black;
+    border-radius: 10px;
 }
+
+#fieri {
+    size: 300px;
+}
+
+
+
