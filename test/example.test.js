@@ -21,7 +21,7 @@ test('rendarCars should return HTML', (expect) => {
     expect.equal(actual, expected);
 });
 
-test('', (expect)=>{
+test('test should return stats for ssr', (expect)=>{
     const expected = {
         id: '4',
         make: 'Chevrolet',
