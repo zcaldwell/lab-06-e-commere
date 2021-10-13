@@ -1,6 +1,6 @@
 // import functions and grab DOM elements
 import { renderCars } from './render-cars.js';
-import { cars } from './things.js';
+import { cars } from './data/things.js';
 // initialize global state
 const carList = document.getElementById('car-list');
 // set event listeners 
