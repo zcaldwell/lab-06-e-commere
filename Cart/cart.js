@@ -1,7 +1,7 @@
 import { cars } from '../data/things.js';
 import { calculateOrderTotal, findById, toUSD } from '../data/utils.js';
 import { cart } from '../data/cart-data.js';
-import { renderLineItems } from '../render-line-items.js';
+import { renderLineItems } from '../data/render-line-items.js';
 
 
 const tbody = document.getElementById('table-body');

@@ -10,8 +10,6 @@ table.thetable {
     width: 50%;
     text-align: center;
     border-collapse: collapse;
-    
-    
 }
 
 table.thetable td, table.thetable th {
