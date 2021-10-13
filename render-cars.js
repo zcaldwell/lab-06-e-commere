@@ -18,12 +18,17 @@ export function renderCars(cars){
     const carHeader2 = document.createElement('h3');
     carHeader2.textContent = cars.model;
 
+    const addButton = document.createElement('button');
+    addButton.textContent = 'Buy';
+    addButton.id = cars.id;
+    addButton.classList.add('add-button'); 
+
     const img = document.createElement('img');
     img.src = cars.img;
 
     // const button = document.createElement('button');
     // button.id = cars.id;
     
-    carListing.append(carHeader, carHeader2, img);
+    carListing.append(carHeader, carHeader2, img, addButton);
     return carListing;
 }

@@ -1,10 +1,10 @@
 
 import { cars } from '../data/things.js';
 import { calculateOrderTotal, findById, toUSD } from '../data/utils.js';
-import { cart } from '../data/cart-data.js';
+
 import { renderLineItems } from '../data/render-line-items.js';
 
-
+const cart = getCart();
 const tbody = document.getElementById('table-body');
 for (let cartItem of cart){
     const carData = findById(cartItem.id, cars);

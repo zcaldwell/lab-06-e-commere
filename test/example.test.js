@@ -1,7 +1,8 @@
 // IMPORT MODULES under test here:
 import { renderCars } from '../render-cars.js';
 import { cars } from '../data/things.js';
-import { findById } from '../data/utils.js';
+import { addItem, findById } from '../data/utils.js';
+import { getCart } from '../data/utils.js';
 // import { calculateOrderTotal } from '../data/utils.js';
 // import { renderLineItems } from '../data/render-line-items.js';
 
@@ -14,7 +15,7 @@ const test = QUnit.test;
 test('rendarCars should return HTML', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const expected = `<div class="car-listing"><h2>Saturn</h2><h3>S-Series</h3><img src="./assets/saturn.jpg"></div>`;
+    const expected = `<div class="car-listing"><h2>Saturn</h2><h3>S-Series</h3><img src="./assets/saturn.jpg"><button id=\"1\" class=\"add-button\">Buy</button></div>`;
     const saturn = cars[0];
     
     //Act 
@@ -51,5 +52,44 @@ test('test should return stats for ssr', (expect)=>{
 
 //     const actual = renderLineItems(Aztec).outerHTML;
 //     console.log(Aztec);
-//     expect.equal(actual, expected);
+//     expect.deepEqual(actual, expected);
 // });
+
+test ('getCart should return the cart if it exists', (expect) => {
+    const fakeCart = [
+        { id: '1', qty: 3 },
+        { id: '3', qty: 4 }
+    ];
+    localStorage.setItem('CART', JSON.stringify(fakeCart));
+
+    const cart = getCart();
+
+    expect.deepEqual(cart, fakeCart);
+    
+   
+});
+
+test ('getCart should return an empty array if the cart doe snot exist', (expect)=>{
+    localStorage.removeItem();
+    const cart = getCart();
+
+    expect.deepEqual(cart, []);
+});
+
+test ('addItem should increment Cars', (expect)=>{
+    const fakeCart = [
+        { id: '1', qty: 3 },
+        { id: '3', qty: 4 }
+    ];
+    localStorage.setItem('CART', JSON.stringify(fakeCart));
+
+    addItem('1');
+    const cart = getCart();
+    const expected = [
+        { id: '1', qty: 4 },
+        { id: '3', qty: 4 }
+    ];
+    expect.deepEqual(cart, expected);
+   
+
+});
