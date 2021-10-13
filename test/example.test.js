@@ -2,6 +2,11 @@
 import { renderCars } from '../render-cars.js';
 import { cars } from '../data/things.js';
 import { findById } from '../data/utils.js';
+import { calculateOrderTotal } from '../data/utils.js';
+import { renderLineItems } from '../data/render-line-items.js';
+
+
+
 // import { example } from '../example.js';
 
 const test = QUnit.test;
@@ -31,10 +36,20 @@ test('test should return stats for ssr', (expect)=>{
         Mileage: '90,353',
         Condition: 'Bad',
         img: './assets/ssr.jpg',
-        price: '2,000$'
+        price: 2000
 
-    }
+    };
 
-    const actual = findById("4", cars);
-    expect.deepEqual(actual, expected)
-})
+    const actual = findById('4', cars);
+    expect.deepEqual(actual, expected);
+});
+
+test('renderLineItems should fill out HTML for table', (expect) => {
+    const expected = `<tr><td>S-Series</td><td>$1,200.00</td><td>1</td><td>$1,200.00</td></tr>`;
+    const Aztec = cars[1];
+    
+
+    const actual = renderLineItems(Aztec).outerHTML;
+    console.log(Aztec);
+    expect.equal(actual, expected);
+});
