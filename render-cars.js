@@ -23,6 +23,11 @@ export function renderCars(cars){
     addButton.id = cars.id;
     addButton.classList.add('add-button'); 
 
+    // const dropButton = document.createElement('select');
+    // dropButton.classList.add('dropbutton');
+    // let newOption = new Option('1', '1');
+    // dropButton.add(newOption);
+
     const img = document.createElement('img');
     img.src = cars.img;
 

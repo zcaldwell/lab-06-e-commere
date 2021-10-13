@@ -1,8 +1,8 @@
 
 import { cars } from '../data/things.js';
-import { calculateOrderTotal, findById, toUSD, getCart } from '../data/utils.js';
-
+import { calculateOrderTotal, findById, toUSD, getCart, clearCart } from '../data/utils.js';
 import { renderLineItems } from '../data/render-line-items.js';
+
 
 const cart = getCart();
 const tbody = document.getElementById('table-body');
@@ -18,9 +18,11 @@ const tdOrderTotal = document.getElementById('total');
 tdOrderTotal.textContent = toUSD(orderTotal);
 
 const orderButton = document.getElementById('checkout');
-orderButton.addEventListener('click', ()=>{
-    localStorage.removeItem('CART');
+orderButton.addEventListener('click', () => {
+    clearCart(cart);
     window.location.replace('..');
-
+    
 });
+    
+
 

@@ -57,4 +57,7 @@ export function addItem(id){
 
 //removeCart
     //clearCart
-    //localStorate.removieItem('cart')
+    //localStorage.removeItem('cart')
+export function clearCart(){
+    localStorage.removeItem('CART');
+}

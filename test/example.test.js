@@ -1,7 +1,7 @@
 // IMPORT MODULES under test here:
 import { renderCars } from '../render-cars.js';
 import { cars } from '../data/things.js';
-import { addItem, findById } from '../data/utils.js';
+import { addItem, findById, clearCart } from '../data/utils.js';
 import { getCart } from '../data/utils.js';
 // import { calculateOrderTotal } from '../data/utils.js';
 // import { renderLineItems } from '../data/render-line-items.js';
@@ -70,7 +70,7 @@ test ('getCart should return the cart if it exists', (expect) => {
 });
 
 test ('getCart should return an empty array if the cart doe snot exist', (expect)=>{
-    localStorage.removeItem();
+    localStorage.removeItem('CART');
     const cart = getCart();
 
     expect.deepEqual(cart, []);
@@ -91,4 +91,16 @@ test ('addItem should increment Cars', (expect)=>{
     ];
     expect.deepEqual(cart, expected);
    
+});
+
+test ('clearCart should clear out the shopping cart', (expect)=>{
+    const fakeCart = [
+        { id: '1', qty: 3 }
+    ];
+    localStorage.setItem('CART', JSON.stringify(fakeCart));
+    
+    clearCart();
+    const cart = getCart();
+    const expected = [];
+    expect.deepEqual(cart, expected);
 });
