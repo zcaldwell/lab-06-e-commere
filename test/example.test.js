@@ -2,8 +2,8 @@
 import { renderCars } from '../render-cars.js';
 import { cars } from '../data/things.js';
 import { findById } from '../data/utils.js';
-import { calculateOrderTotal } from '../data/utils.js';
-import { renderLineItems } from '../data/render-line-items.js';
+// import { calculateOrderTotal } from '../data/utils.js';
+// import { renderLineItems } from '../data/render-line-items.js';
 
 
 
@@ -44,12 +44,12 @@ test('test should return stats for ssr', (expect)=>{
     expect.deepEqual(actual, expected);
 });
 
-test('renderLineItems should fill out HTML for table', (expect) => {
-    const expected = `<tr><td>S-Series</td><td>$1,200.00</td><td>1</td><td>$1,200.00</td></tr>`;
-    const Aztec = cars[1];
+// test('renderLineItems should fill out HTML for table', (expect) => {
+//     const expected = `<tr><td>S-Series</td><td>$1,200.00</td><td>1</td><td>$1,200.00</td></tr>`;
+//     const Aztec = cars[1];
     
 
-    const actual = renderLineItems(Aztec).outerHTML;
-    console.log(Aztec);
-    expect.equal(actual, expected);
-});
+//     const actual = renderLineItems(Aztec).outerHTML;
+//     console.log(Aztec);
+//     expect.equal(actual, expected);
+// });
