@@ -1,5 +1,5 @@
 
-import { toUSD } from '../data/utils.js';
+import { toUSD } from './utils.js';
 
 export function renderLineItems(cartItem, carData){
     const tr = document.createElement('tr');
