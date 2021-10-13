@@ -1,4 +1,8 @@
 
+* {
+    font-family: rye;
+}
+
 body {
     display: flex;
     flex-direction: column;
