@@ -1,10 +1,10 @@
 // IMPORT MODULES under test here:
 import { renderCars } from '../render-cars.js';
 import { cars } from '../data/things.js';
-import { addItem, findById, clearCart } from '../data/utils.js';
-import { getCart } from '../data/utils.js';
-// import { calculateOrderTotal } from '../data/utils.js';
-// import { renderLineItems } from '../data/render-line-items.js';
+import { addItem, findById, clearCart,getCart, calculateOrderTotal } from '../data/utils.js';
+import { renderLineItems } from '../data/render-line-items.js';
+import { cart } from '../data/cart-data.js';
+
 
 
 
@@ -45,15 +45,16 @@ test('test should return stats for ssr', (expect)=>{
     expect.deepEqual(actual, expected);
 });
 
-// test('renderLineItems should fill out HTML for table', (expect) => {
-//     const expected = `<tr><td>S-Series</td><td>$1,200.00</td><td>1</td><td>$1,200.00</td></tr>`;
-//     const Aztec = cars[1];
+test('renderLineItems should fill out HTML for table', (expect) => {
+    const expected = `<tr><td>S-Series</td><td>$1,200.00</td><td>1</td><td>$1,200.00</td></tr>`;
+    const Aztec = cars[0];
+    const cartItem = cart[0];
     
 
-//     const actual = renderLineItems(Aztec).outerHTML;
-//     console.log(Aztec);
-//     expect.deepEqual(actual, expected);
-// });
+    
+    const actual = renderLineItems(cartItem, Aztec).outerHTML;
+    expect.deepEqual(actual, expected);
+});
 
 test ('getCart should return the cart if it exists', (expect) => {
     const fakeCart = [
