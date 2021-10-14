@@ -15,7 +15,7 @@ const test = QUnit.test;
 test('rendarCars should return HTML', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const expected = `<div class="car-listing"><h2>Saturn</h2><h3>S-Series</h3><h4>$1,200.00</h4><img src="./assets/saturn.jpg"><button id=\"1\" class=\"add-button\">Buy</button></div>`;
+    const expected = `<div class="car-listing"><h2>Saturn</h2><h3>S-Series</h3><h4>$1,200.00</h4><img src="./assets/saturn.jpg"><button id="1" class="add-button">Buy</button></div>`;
     const saturn = cars[0];
     
     //Act 
