@@ -16,8 +16,8 @@ export function calculateOrderTotal(cart, cars) {
     for (let item of cart){
         const car = findById(item.id, cars);
         orderTotal = orderTotal + car.price * item.qty;
+        
     }
-    
     return orderTotal;
 }
 

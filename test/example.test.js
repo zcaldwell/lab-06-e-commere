@@ -1,7 +1,7 @@
 // IMPORT MODULES under test here:
 import { renderCars } from '../render-cars.js';
 import { cars } from '../data/things.js';
-import { addItem, findById, clearCart,getCart, calculateOrderTotal } from '../data/utils.js';
+import { addItem, findById, clearCart, getCart, calculateOrderTotal } from '../data/utils.js';
 import { renderLineItems } from '../data/render-line-items.js';
 import { cart } from '../data/cart-data.js';
 
@@ -53,6 +53,18 @@ test('renderLineItems should fill out HTML for table', (expect) => {
 
     
     const actual = renderLineItems(cartItem, Aztec).outerHTML;
+    expect.deepEqual(actual, expected);
+});
+
+test ('calculateOrderTotal should give me the total of the cart', (expect) => {
+    const expected = 8000;
+    const fakeCart = [
+        { id: '4', qty: 4 }
+    ];
+    localStorage.setItem('CART', JSON.stringify(fakeCart));
+    
+    console.log(fakeCart);
+    const actual = calculateOrderTotal(fakeCart, cars);
     expect.deepEqual(actual, expected);
 });
 
