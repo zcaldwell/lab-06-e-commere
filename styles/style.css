@@ -62,5 +62,9 @@ a {
     size: 300px;
 }
 
+#car-inputs {
+    display: flex;
+    flex-direction: column;
+}
 
 

@@ -1,7 +1,7 @@
 // IMPORT MODULES under test here:
 import { renderCars } from '../render-cars.js';
 import { cars } from '../data/things.js';
-import { addItem, findById, clearCart, getCart, calculateOrderTotal } from '../data/utils.js';
+import { addItem, findById, clearCart, getCart, calculateOrderTotal, getProducts, addProduct } from '../data/utils.js';
 import { renderLineItems } from '../data/render-line-items.js';
 import { cart } from '../data/cart-data.js';
 
@@ -117,3 +117,25 @@ test ('clearCart should clear out the shopping cart', (expect)=>{
     const expected = [];
     expect.deepEqual(cart, expected);
 });
+
+test ('addProduct should add a product to the array', (expect)=>{
+    let products = getProducts();
+    const newProduct = {
+        id: '6',
+        make: 'Hummer',
+        model: 'h2',
+        Year: '2006',
+        Color: 'Black',
+        Mileage: '65,345',
+        Condition: 'Fair',
+        img: './assets/hummer.jpg',
+        price: 13000
+    };
+
+    addProduct(newProduct);
+
+    products = getProducts();
+    expect.equal(products.length, 6);
+    console.log(newProduct)
+});
+

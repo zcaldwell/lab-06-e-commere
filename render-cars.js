@@ -22,6 +22,7 @@ export function renderCars(cars){
 
     const carHeader3 = document.createElement('h4');
     carHeader3.textContent = toUSD(cars.price);
+    console.log(cars);
 
     const addButton = document.createElement('button');
     addButton.textContent = 'Buy';

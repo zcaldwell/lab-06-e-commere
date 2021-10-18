@@ -62,3 +62,21 @@ export function clearCart(){
     localStorage.removeItem('CART');
 }
 
+import { cars } from './things.js';
+
+export function getProducts() {
+    let lsProducts = localStorage.getItem('PRODUCTS');
+    const products = JSON.parse(lsProducts);
+    if (!products){
+        const carsString = JSON.stringify(cars);
+        localStorage.setItem('PRODUCTS', carsString);
+    }
+    return products || cars;
+}
+
+export function addProduct(newCar) {
+    let products = getProducts();
+    products.push(newCar);
+    let productsString = JSON.stringify(products);
+    localStorage.setItem('PRODUCTS', productsString);
+}
