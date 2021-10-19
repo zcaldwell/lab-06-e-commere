@@ -1,5 +1,7 @@
 
-import { addProduct } from '../data/utils.js';
+import { addProduct, findById } from '../data/utils.js';
+import { cars } from '../data/things.js';
+
 
 const form = document.getElementById('car-inputs');
 
@@ -21,3 +23,4 @@ form.addEventListener('submit', (e) =>{
     
     alert('New Car Added');
 });
+

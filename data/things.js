@@ -43,7 +43,8 @@ export const cars = [
         img: './assets/ssr.jpg',
         price: 2000
     },
-    {
+    {   
+        id: '5',
         make: 'Plymouth',
         model: 'Prowler',
         Year: '2001',

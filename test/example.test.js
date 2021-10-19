@@ -136,6 +136,6 @@ test ('addProduct should add a product to the array', (expect)=>{
 
     products = getProducts();
     expect.equal(products.length, 6);
-    console.log(newProduct)
+  
 });
 
