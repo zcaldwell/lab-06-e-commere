@@ -65,6 +65,7 @@ button {
 	padding:12px 44px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #cc5454;
+    margin-bottom: 100px;
 }
 
 button:hover {

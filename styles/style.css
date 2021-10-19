@@ -67,4 +67,10 @@ a {
     flex-direction: column;
 }
 
+#submit {
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
