@@ -5,6 +5,7 @@ import { addProduct } from '../data/utils.js';
 
 const form = document.getElementById('car-inputs');
 
+
 form.addEventListener('submit', (e) =>{
     e.preventDefault();
     const data = new FormData(form);
@@ -20,7 +21,7 @@ form.addEventListener('submit', (e) =>{
         price: Number(data.get('price'))
     };
     addProduct(newCar);
-    
     alert('New Car Added');
+    document.querySelector('form').reset();
 });
 
