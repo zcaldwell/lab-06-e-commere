@@ -1,6 +1,6 @@
 
-import { addProduct, findById } from '../data/utils.js';
-import { cars } from '../data/things.js';
+import { addProduct } from '../data/utils.js';
+
 
 
 const form = document.getElementById('car-inputs');

@@ -63,7 +63,7 @@ test ('calculateOrderTotal should give me the total of the cart', (expect) => {
     ];
     localStorage.setItem('CART', JSON.stringify(fakeCart));
     
-    console.log(fakeCart);
+    
     const actual = calculateOrderTotal(fakeCart, cars);
     expect.deepEqual(actual, expected);
 });
